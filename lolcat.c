@@ -40,7 +40,7 @@ static char helpstr[] = "\n"
                         "                 --force-color, -f: Force color even when stdout is not a tty\n"
                         "             --no-force-locale, -l: Use encoding from system locale instead of\n"
                         "                                    assuming UTF-8\n"
-                        "                      --random, -r: Random colors\n"
+                        "                      --no-random, -n: Do not randomize colors\n"
                         "        --color_offset <d>, -o <d>: Start with a different color\n"
                         "                       --24bit, -b: Output in 24-bit \"true\" RGB mode (slower and\n"
                         "                                    not supported by all terminals)\n"
@@ -101,7 +101,7 @@ int main(int argc, char** argv)
     wint_t c;
     int colors    = isatty(STDOUT_FILENO);
     int force_locale = 1;
-    int random = 0;
+    int random = 1;
     int start_color = 0;
     int rgb = 0;
     double freq_h = 0.23, freq_v = 0.1;
@@ -132,8 +132,8 @@ int main(int argc, char** argv)
             colors = 1;
         } else if (!strcmp(argv[i], "-l") || !strcmp(argv[i], "--no-force-locale")) {
             force_locale = 0;
-        } else if (!strcmp(argv[i], "-r") || !strcmp(argv[i], "--random")) {
-            random = 1;
+        } else if (!strcmp(argv[i], "-n") || !strcmp(argv[i], "--no-random")) {
+            random = 0;
         } else if (!strcmp(argv[i], "-o") || !strcmp(argv[i], "--color_offset")) {
             if ((++i) < argc) {
                 start_color = strtod(argv[i], &endptr);

@@ -2,6 +2,10 @@
 
 ![](https://raw.githubusercontent.com/jaseg/lolcat/master/LOLCat-Rainbow.jpg)
 
+## About this fork
+
+Inverted the optional `--random` argument to be the default (`--random` has been replaced with `--no-random`)
+
 ## Screenshot
 
 ![](https://raw.githubusercontent.com/jaseg/lolcat/master/screenshot.png)
@@ -9,30 +13,6 @@
 ![](./sl.gif)
 
 ## Installation
-
-### Archlinux
-
-There's an [AUR package](https://aur.archlinux.org/packages/c-lolcat):
-
-```bash
-$ git clone https://aur.archlinux.org/packages/c-lolcat
-$ cd c-lolcat
-$ makepkg -csi
-```
-
-### Fedora ###
-
-```bash
-$ dnf install lolcat
-```
-
-### Ubuntu (Snap)
-
-See [this awesome blog post by a kind person from the internet](https://blog.simos.info/how-to-make-a-snap-package-for-lolcat-with-snapcraft-on-ubuntu/):
-
-```bash
-$ snap install lolcat-c
-```
 
 ### Mac
 
